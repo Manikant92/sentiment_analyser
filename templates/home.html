@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Sentiment Analyzer App - Made by Manikant Kella</title>
+
+</head>
+<body>
+
+<form action="/", method = "POST">
+
+    <font size = "5" color="RoyalBlue"><b>Enter Text in English to find the Sentiment of the Sentence: <br> </b></font>
+
+    <textarea id="text_input" name= "text_input" class="input" placeholder="Type or Paste sentence and click on Analyze button to find it's Sentiment..." rows="10" cols="100" required>{% if sentence %}
+{{ sentence }}
+{% endif %}</textarea>
+    <p align="center"><input type ="submit" style="font-size:11pt;color:white;background-color:MediumSeaGreen;border:0px solid #336600;padding:5px" value="Analyze" /></p>
+
+</form>
+<!--<p>
+{% if sentence %}
+Sentence: {{ sentence }}
+{% endif %}
+</p> -->
+<p style="text-align:justify">
+{% if category %}
+    <font size="4" color="OrangeRed"> <b>{{ category }} sentence!!</b> </font>
+{% endif %}
+<br>
+<!--<p align="center">-->
+{% if compound %}
+    Sentence Compound Score: <font size="4" color="FireBrick"> <b>{{ compound }} </b></font> <small> &ensp; [compound score is computed by summing the valence scores of each word in the lexicon,
+    and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive)]</small>
+{% endif %}
+<br>
+<!--<p align="center">-->
+{% if positive %}
+    Sentence Positive Score:  <font size="4" color="FireBrick"> <b>{{ positive }} </b></font> <small>&ensp; [positive score is ratio for proportion of text that fall under positive category and
+    is scaled between 0 to 10 (positive, negative and neutral scores should all add up to be 10)]</small>
+{% endif %}
+<br>
+<!--<p align="center">-->
+{% if negative %}
+  Sentence Negative Score: <font size="4" color="FireBrick"> <b>{{ negative }}</b></font> <small>&ensp; [negative score is ratio for proportion of text that fall under negative category and
+    is scaled between 0 to 10 (positive, negative and neutral scores should all add up to be 10)]</small>
+{% endif %}
+<br>
+<!--<p align="center">-->
+{% if neutral %}
+  Sentence Neutral Score: <font size="4" color="FireBrick"> <b>{{ neutral }}</b></font> <small>&ensp; [neutral score is ratio for proportion of text that fall under neutral category and
+    is scaled between 0 to 10 (positive, negative and neutral scores should all add up to be 10)]</small>
+{% endif %}
+
+
+</p>
+</body>
+<footer>
+    <p class="developer">Made with <span style="color: red"> ❤ </span> by <a href="https://www.linkedin.com/in/manikantkella/" target="_blank">Manikant Kella</a> ||
+    <a href="https://nowenlightenme.com/" target="_blank">Blog</a> ||
+    <a href="https://github.com/Manikant92" target="_blank">GitHub</a> ||
+    <a href="https://medium.com/@kellamanikant" target="_blank">Medium</a> ||
+    <a href="https://www.quora.com/profile/Manikant-K" target="_blank">Quora</a>
+</p>
+<!--<p class="github">Connect with him at <a href="https://github.com/Manikant92" target="_blank">GitHub</a></p>
+<p class="blog">Connect with him at <a href="https://nowenlightenme.com/" target="_blank">Blog</a></p>
+<p class="medium">Connect with him at <a href="https://medium.com/@kellamanikant" target="_blank">Medium</a></p>
+<p class="quora">Connect with him at <a href="https://www.quora.com/profile/Manikant-K" target="_blank">Quora</a></p>-->
+</footer>
+<style>
+    footer {
+        position: relative;
+        height: 300px;
+        width: 100%;
+
+}
+p.developer {
+        position: absolute;
+        width: 100%;
+        line-height: 40px;
+        font-size: 1.0em;
+        text-align: center;
+        bottom:0;
+    }
+</style>
+</html>

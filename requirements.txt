@@ -1,3 +1,4 @@
 Flask==1.0.2
 vaderSentiment==3.2.1
 requests==2.19.1
+gunicorn==19.9.0
